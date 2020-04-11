@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
-import GalleryList from "../galleryList/galleryList";
+import GalleryList from "../galleryList/GalleryList";
 
 class App extends Component {
+  state = {
+    galleryList: [],
+  };
   componentDidMount() {
     this.getGallery();
   }
@@ -13,6 +16,14 @@ class App extends Component {
       .get("/gallery")
       .then((response) => {
         console.log(response.data);
+        this.setState(
+          {
+            galleryList: response.data,
+          },
+          () => {
+            console.log(this.state);
+          }
+        );
       })
       .catch((err) => console.warn(err));
   }
@@ -20,12 +31,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <br />
-        <GalleryList />
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg" />
+        <GalleryList galleryList={this.state.galleryList} />
       </div>
     );
   }
