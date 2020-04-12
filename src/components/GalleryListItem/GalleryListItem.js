@@ -12,7 +12,7 @@ class GalleryListItem extends Component {
             Love it!
           </button>
           <br></br>
-          <span>0</span> people like this
+          <span>{this.props.photo.likes}</span> people like this
         </p>
       </div>
     );
