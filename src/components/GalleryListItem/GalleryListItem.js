@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import "./GalleryListitem.css";
 
 class GalleryListItem extends Component {
   render() {
     return (
-      <div>
+      <div className="galleryListItem-photos">
         <img src={this.props.photo.path}></img>
 
         <p>
