@@ -27,14 +27,28 @@ class App extends Component {
       })
       .catch((err) => console.warn(err));
   }
+  clickLove = (id) => (event) => {
+    console.log(id);
+    axios
+      .put(`/gallery/like/${id}`)
+      .then((response) => {
+        console.log(response.data);
+        this.getGallery();
+      })
+      .catch((err) => console.warn(err));
+  };
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+          <h1 className="App-title">Gallery of My Crafts</h1>
         </header>
         <br />
-        <GalleryList galleryList={this.state.galleryList} />
+        <GalleryList
+          galleryList={this.state.galleryList}
+          clickLove={this.clickLove}
+        />
       </div>
     );
   }

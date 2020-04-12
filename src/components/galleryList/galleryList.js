@@ -4,7 +4,13 @@ import GalleryListItem from "../GalleryListItem/GalleryListItem";
 class GalleryList extends Component {
   render() {
     const galleryArray = this.props.galleryList.map((photo, index) => {
-      return <GalleryListItem key={index} photo={photo} />;
+      return (
+        <GalleryListItem
+          key={index}
+          photo={photo}
+          clickLove={this.props.clickLove}
+        />
+      );
     });
     /*
     Expected format of what is returned is this:

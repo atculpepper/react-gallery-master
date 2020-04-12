@@ -8,7 +8,9 @@ class GalleryListItem extends Component {
         <img src={this.props.photo.path}></img>
 
         <p>
-          <button>Love it! </button>
+          <button onClick={this.props.clickLove(this.props.photo.id)}>
+            Love it!
+          </button>
           <br></br>
           <span>0</span> people like this
         </p>

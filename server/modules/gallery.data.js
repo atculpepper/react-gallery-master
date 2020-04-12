@@ -1,39 +1,38 @@
 const galleryItems = [
   {
     id: 1,
-    path: "images/rachelandanne.jpg",
-    description: "Photo of Anne and Rachel on Halloween in Lincoln Woods.",
+    path: "images/glass-giraffe.jpg",
+    description: "Blown glass giraffe, 2019",
     likes: 0,
   },
   {
     id: 2,
-    path: "images/culpepperIrish.jpg",
-    description:
-      "Photo of Gary, Katherine, and Marie at the Providence Irish 5k.",
+    path: "images/kells-mugs.jpg",
+    description: "Pre-kiln ceramic mugs with animals from The Book of Kells.",
     likes: 0,
   },
   {
     id: 3,
-    path: "images/writingLetters.jpg",
-    description: "Photo of a letter with a gilded tree.",
+    path: "images/stained-glass.jpg",
+    description: "Stained Glass Road to Emmaeus 2019",
     likes: 0,
   },
   {
     id: 4,
-    path: "images/woodWork.jpg",
-    description: "Photo of a project in mulberry taken in Lawrence, KS.",
+    path: "images/writingLetters.jpg",
+    description: "Letter with a gilded tree",
     likes: 0,
   },
   {
     id: 5,
-    path: "images/lincolnWoods.jpg",
-    description: "Photo of Lincoln Woods at dusk.",
+    path: "images/perpetual-hope.jpg",
+    description: "Russian Orthodox Icon Our Lady of Perpetual Hope",
     likes: 0,
   },
   {
     id: 6,
-    path: "images/celticHarp.jpg",
-    description: "Photo of a Celtic harp.",
+    path: "images/first-shirt.jpg",
+    description: "First shirt! Adventures in sewing 2019",
     likes: 0,
   },
 ];
