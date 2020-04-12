@@ -5,6 +5,12 @@ class GalleryListItem extends Component {
     return (
       <div>
         <img src={this.props.photo.path}></img>
+
+        <p>
+          <button>Love it! </button>
+          <br></br>
+          <span>0</span> people like this
+        </p>
       </div>
     );
   }
