@@ -14,7 +14,7 @@ const galleryItems = [
   },
   {
     id: 3,
-    path: "images/writingLetters",
+    path: "images/writingLetters.jpg",
     description: "Photo of a letter with a gilded tree.",
     likes: 0,
   },

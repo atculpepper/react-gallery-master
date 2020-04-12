@@ -1,13 +1,10 @@
 import React, { Component } from "react";
+import GalleryListItem from "../GalleryListItem/GalleryListItem";
 
 class GalleryList extends Component {
   render() {
     const galleryArray = this.props.galleryList.map((photo, index) => {
-      return (
-        <div key={index}>
-          <img src={photo.path}></img>
-        </div>
-      );
+      return <GalleryListItem key={index} photo={photo} />;
     });
     /*
     Expected format of what is returned is this:
