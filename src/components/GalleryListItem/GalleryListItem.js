@@ -13,7 +13,11 @@ class GalleryListItem extends Component {
 
   render() {
     let imageElement = (
-      <img src={this.props.photo.path} alt={this.props.photo.description} />
+      <img
+        class="image"
+        src={this.props.photo.path}
+        alt={this.props.photo.description}
+      />
     );
 
     if (!this.state.imageToggle) {
