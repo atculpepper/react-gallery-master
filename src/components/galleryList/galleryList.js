@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import GalleryListItem from "../GalleryListItem/GalleryListItem";
 
+//app.js sends the array data to GalleryList.js
+//GalleryList.js maps the array, creating a copy
+
 class GalleryList extends Component {
   render() {
     const galleryArray = this.props.galleryList.map((photo, index) => {
