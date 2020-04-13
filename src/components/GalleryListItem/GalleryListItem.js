@@ -1,57 +1,41 @@
 import React, { Component } from "react";
 import "./GalleryListitem.css";
 
-// trial code --failed to compile as showPhoto is not defined
-// function toggleAction(event) {
-//   event.preventDefault();
-//   console.log("you clicked on a photo");
-//     this.setState((prevState) => ({
-//     showPhoto: !prevState.showPhoto,
-// })); // }
-
 class GalleryListItem extends Component {
+  state = {
+    imageToggle: true,
+  };
+  toggleImage = (event) => {
+    this.setState({
+      imageToggle: !this.state.imageToggle,
+    });
+  };
+
   render() {
-    //if else statement here. Need to capture data on click and figure out how to alternate rending of this.props.photo.path and this.props.photo.description
-    if (this.props.photo.showPhoto) {
-      return (
-        <div className="galleryListItem-photos">
-          <img
-            className="image"
-            // value="showPhoto"
-            // onClick={toggleAction}
-            src={this.props.photo.path}
-          ></img>
+    let imageElement = (
+      <img src={this.props.photo.path} alt={this.props.photo.description} />
+    );
 
-          <div className="galleryList-btn-and-count">
-            <button
-              className="gallery-like-btn"
-              onClick={this.props.clickLove(this.props.photo.id)}
-            >
-              Love it!
-            </button>
-            <br></br>
-            <span>{this.props.photo.likes}</span> people like this
-          </div>
-        </div>
-      );
+    if (!this.state.imageToggle) {
+      imageElement = <p>{this.props.photo.description}</p>;
     }
-    // return (
-    //   <div className="galleryListItem-photos">
-    //     <p
-    //       onClick={toggleAction}
-    //       src={this.props.photo.description}
-    //       value="showPhoto"
-    //     ></p>
 
-    //     <p>
-    //       <button onClick={this.props.clickLove(this.props.photo.id)}>
-    //         Love it!
-    //       </button>
-    //       <br></br>
-    //       <span>{this.props.photo.likes}</span> people like this
-    //     </p>
-    //   </div>
-    // );
+    return (
+      <div className="galleryListItem-photos">
+        <div onClick={this.toggleImage}>{imageElement}</div>
+
+        <div className="galleryList-btn-and-count">
+          <button
+            className="gallery-like-btn"
+            onClick={this.props.clickLove(this.props.photo.id)}
+          >
+            Love it!
+          </button>
+          <br></br>
+          <span>{this.props.photo.likes}</span> people like this
+        </div>
+      </div>
+    );
   }
 }
 
