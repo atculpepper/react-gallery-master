@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import "./GalleryListitem.css";
 
-function toggleAction(event) {
-  event.preventDefault();
-  console.log("you clicked on a photo");
-}
+// trial code --failed to compile as showPhoto is not defined
+// function toggleAction(event) {
+//   event.preventDefault();
+//   console.log("you clicked on a photo");
+//     this.setState((prevState) => ({
+//     showPhoto: !prevState.showPhoto,
+// })); // }
 
 class GalleryListItem extends Component {
   render() {
@@ -14,7 +17,8 @@ class GalleryListItem extends Component {
         <div className="galleryListItem-photos">
           <img
             className="image"
-            onClick={this.props.clickLove(this.props.photo.showPhoto)}
+            // value="showPhoto"
+            // onClick={toggleAction}
             src={this.props.photo.path}
           ></img>
 
@@ -31,19 +35,23 @@ class GalleryListItem extends Component {
         </div>
       );
     }
-    return (
-      <div className="galleryListItem-photos">
-        <p onClick={toggleAction} src={this.props.photo.description}></p>
+    // return (
+    //   <div className="galleryListItem-photos">
+    //     <p
+    //       onClick={toggleAction}
+    //       src={this.props.photo.description}
+    //       value="showPhoto"
+    //     ></p>
 
-        <p>
-          <button onClick={this.props.clickLove(this.props.photo.id)}>
-            Love it!
-          </button>
-          <br></br>
-          <span>{this.props.photo.likes}</span> people like this
-        </p>
-      </div>
-    );
+    //     <p>
+    //       <button onClick={this.props.clickLove(this.props.photo.id)}>
+    //         Love it!
+    //       </button>
+    //       <br></br>
+    //       <span>{this.props.photo.likes}</span> people like this
+    //     </p>
+    //   </div>
+    // );
   }
 }
 
