@@ -17,7 +17,9 @@ class GalleryListItem extends Component {
     );
 
     if (!this.state.imageToggle) {
-      imageElement = <p>{this.props.photo.description}</p>;
+      imageElement = (
+        <p class="conditional-imageElement">{this.props.photo.description}</p>
+      );
     }
 
     return (
